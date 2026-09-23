@@ -23,7 +23,6 @@ import {
 } from 'lucide-react';
 
 import { countries } from '@/lib/countries';
-import { VoiceAssistant } from '@/components/voice-assistant';
 
 // ─── Service items (mirrors ServicesGrid data) ────────────────────────────────
 
@@ -241,7 +240,6 @@ export default function Navbar() {
 		href === '/' ? pathname === '/' : pathname.startsWith(href);
 
 	return (
-		<>
 		<header
 			className={`fixed z-50 top-0 left-0 right-0 w-full pointer-events-none flex flex-col items-center transition-colors duration-300 ${
 				scrolled
@@ -909,7 +907,5 @@ export default function Navbar() {
 				)}
 			</AnimatePresence>
 		</header>
-		<VoiceAssistant />
-		</>
 	);
 }

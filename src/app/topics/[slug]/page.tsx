@@ -20,7 +20,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: TopicDetailPageProps): Metadata {
   const hub = getTopicHub(params.slug);
-  if (!hub) return { title: 'Topic not found' };
+  if (!hub) return { title: 'Topic not found', robots: { index: false } };
   return {
     title: `${hub.title} | aibizmod`,
     description: hub.excerpt,

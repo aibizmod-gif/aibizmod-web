@@ -25,6 +25,7 @@ export function generateMetadata({ params }: BlogDetailPageProps): Metadata {
   if (!post) {
     return {
       title: "Blog post not found",
+      robots: { index: false },
     };
   }
 

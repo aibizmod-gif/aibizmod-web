@@ -20,7 +20,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: ComparisonDetailPageProps): Metadata {
   const c = getComparison(params.slug);
-  if (!c) return { title: 'Comparison not found' };
+  if (!c) return { title: 'Comparison not found', robots: { index: false } };
   return {
     title: `${c.title} | aibizmod`,
     description: c.excerpt,

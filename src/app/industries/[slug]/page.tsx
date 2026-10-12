@@ -36,7 +36,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: IndustryPageProps): Metadata {
   const ind = getIndustry(params.slug);
-  if (!ind) return { title: 'Industry not found' };
+  if (!ind) return { title: 'Industry not found', robots: { index: false } };
   return {
     title: `${ind.name} — Enterprise Technology & Custom Systems | aibizmod`,
     description: ind.description,

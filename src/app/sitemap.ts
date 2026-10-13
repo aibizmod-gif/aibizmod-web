@@ -3,6 +3,7 @@ import { blogPosts } from '@/data/blog';
 import { industries } from '@/data/industries';
 import { comparisons } from '@/data/comparisons';
 import { services } from '@/data/services';
+import { technologyPlatforms } from '@/data/technology-ecosystem';
 import { topicHubs } from '@/data/topics';
 
 const BASE = 'https://aibizmod.com';
@@ -34,6 +35,7 @@ const staticRoutes = [
   '/brand-audit',
   '/keywords',
   '/industries',
+  '/technology-ecosystem',
   '/social-media-platforms',
   '/ai-visibility-audit-report',
   '/careers',
@@ -64,6 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/brand-audit': 0.5,
     '/keywords': 0.6,
     '/industries': 0.7,
+    '/technology-ecosystem': 0.7,
     '/social-media-platforms': 0.6,
     '/ai-visibility-audit-report': 0.7,
     '/careers': 0.5,
@@ -99,6 +102,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const ecosystemPages = technologyPlatforms.map((p) => ({
+    url: `${BASE}/technology-ecosystem/${p.slug}`,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
   const posts = blogPosts.map((post) => ({
     url: `${BASE}/blog/${post.slug}`,
     changeFrequency: 'monthly' as const,
@@ -106,5 +115,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: post.date ? new Date(post.date) : undefined,
   }));
 
-  return [...statics, ...extraPages, ...topicPages, ...comparisonPages, ...industryPages, ...posts];
+  return [...statics, ...extraPages, ...topicPages, ...comparisonPages, ...industryPages, ...ecosystemPages, ...posts];
 }

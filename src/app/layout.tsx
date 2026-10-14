@@ -185,15 +185,11 @@ export default function RootLayout({
 			<head>
 				<link rel="preconnect" href="https://api.fontshare.com" />
 				<link rel="preconnect" href="https://images.unsplash.com" />
-				{/* Satoshi font — load non-blocking via JS */}
-				<script
-					dangerouslySetInnerHTML={{
-						__html: `(function(){var d=document;var l=d.createElement('link');l.rel='stylesheet';l.href='https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4,5,6,7&display=swap';d.head.appendChild(l)})()`
-					}}
+				{/* Satoshi — site-wide primary font (sans + display), also used by the logo */}
+				<link
+					rel="stylesheet"
+					href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4,5,6,7&display=swap"
 				/>
-				<noscript>
-					<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4,5,6,7&display=swap" />
-				</noscript>
 				<script
 					type='application/ld+json'
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(entityGraph) }}

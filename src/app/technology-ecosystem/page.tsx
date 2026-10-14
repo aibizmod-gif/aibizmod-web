@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ChevronRight, ArrowRight, Layers, ArrowUpRight } from 'lucide-react';
+import { ChevronRight, ArrowRight, Layers, ArrowUpRight, Database } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import StickyFooterLayout from '@/components/layout/StickyFooterLayout';
@@ -119,6 +119,18 @@ export default function TechnologyEcosystemPage() {
                       href={`/technology-ecosystem/${platform.slug}`}
                       className="group flex h-full flex-col rounded-2xl border border-cyan-100/80 bg-white p-6 shadow-[0_8px_24px_rgba(59,130,246,0.06)] transition hover:-translate-y-1 hover:border-cyan-200 hover:shadow-[0_18px_48px_rgba(8,145,178,0.12)]"
                     >
+                      <div className="mb-4 flex h-8 items-center">
+                        {platform.icon ? (
+                          <img
+                            src={platform.icon}
+                            alt=""
+                            aria-hidden="true"
+                            className="h-7 w-auto max-w-[9rem] object-contain object-left"
+                          />
+                        ) : (
+                          <Database size={26} className="text-slate-400" aria-hidden="true" />
+                        )}
+                      </div>
                       <span className={`inline-flex w-fit items-center rounded-full px-3 py-1 text-xs font-semibold border ${cardAccents[platform.slug] ?? cardAccents.microsoft}`}>
                         {platform.badge}
                       </span>

@@ -131,8 +131,17 @@ export default function TechnologyPage({ params }: TechnologyPageProps) {
               </nav>
 
               <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-cyan-100 bg-cyan-50 text-cyan-700">
-                  <Icon size={20} />
+                <div className="flex h-11 min-w-11 items-center justify-center rounded-xl border border-cyan-100 bg-cyan-50 px-3 text-cyan-700">
+                  {platform.icon ? (
+                    <img
+                      src={platform.icon}
+                      alt=""
+                      aria-hidden="true"
+                      className="h-6 w-auto max-w-[6rem] object-contain"
+                    />
+                  ) : (
+                    <Icon size={20} />
+                  )}
                 </div>
                 <span className="text-sm font-semibold uppercase tracking-[0.14em] text-cyan-700">{platform.badge}</span>
               </div>

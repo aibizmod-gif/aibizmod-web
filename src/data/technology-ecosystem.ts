@@ -12,6 +12,7 @@ export interface EcosystemFAQ {
 export interface TechnologyPlatform {
   slug: string;
   name: string;
+  icon?: string;
   badge: string;
   tagline: string;
   description: string;
@@ -25,6 +26,7 @@ export const technologyPlatforms: TechnologyPlatform[] = [
   {
     slug: 'microsoft',
     name: 'Microsoft',
+    icon: '/technology-icons/microsoft.svg',
     badge: 'Cloud · AI · Productivity',
     tagline:
       'Helping businesses explore secure cloud infrastructure, AI-assisted productivity, business applications, and connected workflows using relevant Microsoft technologies.',
@@ -135,6 +137,7 @@ export const technologyPlatforms: TechnologyPlatform[] = [
   {
     slug: 'sap',
     name: 'SAP',
+    icon: '/technology-icons/sap.svg',
     badge: 'ERP · Enterprise Applications',
     tagline:
       'Helping businesses evaluate enterprise resource planning, business applications, data integration, and process automation for more connected operations.',
@@ -190,6 +193,7 @@ export const technologyPlatforms: TechnologyPlatform[] = [
   {
     slug: 'salesforce',
     name: 'Salesforce',
+    icon: '/technology-icons/salesforce.svg',
     badge: 'CRM · Customer Experience',
     tagline:
       'Exploring customer relationship management, sales workflows, service experiences, marketing processes, and AI-assisted customer engagement.',
@@ -245,6 +249,7 @@ export const technologyPlatforms: TechnologyPlatform[] = [
   {
     slug: 'ibm',
     name: 'IBM',
+    icon: '/technology-icons/ibm.svg',
     badge: 'Enterprise AI · Hybrid Cloud',
     tagline:
       'Evaluating enterprise AI, hybrid cloud, data capabilities, and automation technologies for organizations modernizing complex business environments.',
@@ -300,6 +305,7 @@ export const technologyPlatforms: TechnologyPlatform[] = [
   {
     slug: 'aws',
     name: 'Amazon Web Services',
+    icon: '/technology-icons/amazonaws.svg',
     badge: 'Cloud · Infrastructure · AI',
     tagline:
       'Helping businesses assess cloud infrastructure, application deployment, data services, and AI capabilities based on their technical and operational needs.',
@@ -355,6 +361,7 @@ export const technologyPlatforms: TechnologyPlatform[] = [
   {
     slug: 'oracle',
     name: 'Oracle',
+    icon: '/technology-icons/oracle.svg',
     badge: 'Cloud · Databases · Enterprise Systems',
     tagline:
       'Exploring cloud infrastructure, database technologies, enterprise applications, and data platforms for business-critical workloads.',
@@ -410,6 +417,7 @@ export const technologyPlatforms: TechnologyPlatform[] = [
   {
     slug: 'red-hat',
     name: 'Red Hat',
+    icon: '/technology-icons/redhat.svg',
     badge: 'Hybrid Cloud · Containers · Linux',
     tagline:
       'Exploring open hybrid cloud, enterprise Linux, container platforms, and application deployment approaches for flexible technology environments.',

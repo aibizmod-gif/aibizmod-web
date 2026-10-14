@@ -180,8 +180,17 @@ export default function TechnologyPage({ params }: TechnologyPageProps) {
                 {platform.capabilities.map((cap, i) => (
                   <AnimatedSection key={cap.title} delay={i * 0.05}>
                     <div className="h-full rounded-2xl border border-cyan-100/80 bg-white/70 p-6 shadow-[0_8px_24px_rgba(59,130,246,0.05)] transition hover:border-cyan-200 hover:shadow-[0_14px_40px_rgba(8,145,178,0.10)]">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-100 bg-cyan-50 text-cyan-700">
-                        <Icon size={18} />
+                      <div className="flex h-11 min-w-11 w-fit items-center justify-center rounded-xl border border-cyan-100 bg-white px-2.5 text-cyan-700">
+                        {platform.icon ? (
+                          <img
+                            src={platform.icon}
+                            alt=""
+                            aria-hidden="true"
+                            className="h-5 w-auto max-w-[4.5rem] object-contain"
+                          />
+                        ) : (
+                          <Icon size={18} />
+                        )}
                       </div>
                       <h3 className="mt-4 font-display font-semibold text-[#0F172A] text-lg leading-snug">{cap.title}</h3>
                       <p className="mt-2 text-sm leading-relaxed text-slate-500">{cap.description}</p>

@@ -318,6 +318,10 @@ export const technologyPlatforms: TechnologyPlatform[] = [
         description: 'AWS environments designed for reliability, security, and predictable cost.',
       },
       {
+        title: 'Virtual Private Cloud (VPC) Setup',
+        description: 'Private network setup with isolated subnets, routing, and security groups for controlled access.',
+      },
+      {
         title: 'Migration & Modernization',
         description: 'Moving applications to AWS with structured, low-risk migration.',
       },

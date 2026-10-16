@@ -20,20 +20,6 @@ const nextConfig = {
       },
     ],
   },
-  async redirects() {
-    return [
-      {
-        source: "/technology-ecosystem",
-        destination: "/technology-ecosystem-integrators",
-        permanent: true,
-      },
-      {
-        source: "/technology-ecosystem/:slug*",
-        destination: "/technology-ecosystem-integrators/:slug*",
-        permanent: true,
-      },
-    ];
-  },
   async rewrites() {
     return [
       {

@@ -10,14 +10,14 @@ import ShaderBackground from '@/components/ui/shader-background';
 import { technologyPlatforms } from '@/data/technology-ecosystem';
 
 export const metadata: Metadata = {
-  title: 'Technology Ecosystem — Microsoft, AWS, Salesforce & More | aibizmod',
+  title: 'Technology Ecosystem Integrators — Microsoft, AWS, Salesforce & More | aibizmod',
   description:
-    'Explore the technology platforms we work across — Microsoft, Temenos, SAP, Salesforce, IBM, AWS, Oracle, and Red Hat — and how each one fits your business operations.',
+    'Technology ecosystem integrators connecting the platforms behind modern operations — Microsoft, Temenos, SAP, Salesforce, IBM, AWS, Oracle, and Red Hat. Explore what each technology does and how it fits your business.',
   alternates: { canonical: 'https://aibizmod.com/technology-ecosystem-integrators' },
   openGraph: {
-    title: 'Technology Ecosystem | aibizmod',
+    title: 'Technology Ecosystem Integrators | aibizmod',
     description:
-      'Explore the technology platforms behind business transformation — from Microsoft and AWS to Salesforce, SAP, Oracle, and Red Hat.',
+      'Explore the technology platforms behind business transformation — from Microsoft and AWS to Salesforce, SAP, Oracle, and Red Hat — and how we help integrate them.',
     url: 'https://aibizmod.com/technology-ecosystem-integrators',
     type: 'website',
   },
@@ -33,6 +33,47 @@ const cardAccents: Record<string, string> = {
   oracle: 'text-red-700 bg-red-50 border-red-200',
   'red-hat': 'text-rose-700 bg-rose-50 border-rose-200',
 };
+
+const integrationPillars = [
+  {
+    title: 'Connect',
+    description:
+      'We link platforms, data, and workflows so information moves cleanly between systems instead of being re-entered by hand.',
+  },
+  {
+    title: 'Govern',
+    description:
+      'Integrations are designed with access control, data boundaries, and cost visibility built in from the very start.',
+  },
+  {
+    title: 'Evolve',
+    description:
+      'Improvements are delivered incrementally, so your environment modernises without a single high-risk replacement.',
+  },
+];
+
+const hubFaqs = [
+  {
+    q: 'What is a technology ecosystem integrator?',
+    a: 'A technology ecosystem integrator connects the platforms a business relies on — such as Microsoft, AWS, Salesforce, SAP, Oracle, IBM, and Red Hat — into systems that share data and workflows, so operations run on connected tools rather than isolated applications.',
+  },
+  {
+    q: 'Do you resell or certify these technology platforms?',
+    a: 'No. We are not a reseller and do not claim vendor certifications. Our work focuses on assessment, integration, custom development, and automation around the platforms your business chooses.',
+  },
+  {
+    q: 'How do you decide which platform is right for us?',
+    a: 'It starts with your operations, existing systems, and goals. We assess requirements before recommending a platform, and we will say when an alternative fits better than the obvious choice.',
+  },
+  {
+    q: 'How do you avoid vendor lock-in?',
+    a: 'We work inside your own accounts and environments, use portable approaches such as infrastructure as code, and document what we build so you keep ownership and flexibility.',
+  },
+  {
+    q: 'How long does a technology integration project take?',
+    a: 'A scoped assessment typically takes a few weeks. Build and integration work depends on the number of systems and data sources involved, and we phase delivery so value arrives early.',
+  },
+];
 
 export default function TechnologyEcosystemPage() {
   const directorySchema = {
@@ -50,12 +91,23 @@ export default function TechnologyEcosystemPage() {
     })),
   };
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: hubFaqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
     <>
       <Navbar />
       <StickyFooterLayout footer={<Footer />}>
         <main className="bg-white text-ink">
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(directorySchema) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
           {/* ── Top Header & Breadcrumb Bar ─────────────────────────────── */}
           <div className="pt-28 pb-4 px-6 bg-gradient-to-b from-[#F0FDFF] to-[#F0FDFF]/60 border-b border-cyan-100/60">
@@ -101,6 +153,31 @@ export default function TechnologyEcosystemPage() {
             </div>
           </section>
 
+          {/* ── What Integration Means ──────────────────────────────────── */}
+          <section className="px-4 sm:px-6 py-16 bg-gradient-to-b from-[#F0FDFF]/70 to-white border-y border-cyan-100/60">
+            <div className="mx-auto max-w-5xl">
+              <AnimatedSection>
+                <SectionHeading eyebrow="The approach" heading="What Technology Ecosystem Integration Means" centered />
+                <p className="mx-auto mt-6 max-w-3xl text-center text-[15px] leading-relaxed text-slate-600">
+                  Technology ecosystem integration means connecting the platforms your business already
+                  depends on — cloud, CRM, ERP, data, and AI tools — into coherent, well-governed
+                  systems. Instead of isolated applications, you get data and workflows that move
+                  cleanly between them, with clear ownership of cost, security, and operations.
+                </p>
+              </AnimatedSection>
+              <div className="mt-10 grid gap-5 md:grid-cols-3">
+                {integrationPillars.map((pillar, i) => (
+                  <AnimatedSection key={pillar.title} delay={i * 0.08}>
+                    <div className="h-full rounded-2xl border border-cyan-100/80 bg-white p-6 shadow-[0_8px_24px_rgba(59,130,246,0.05)]">
+                      <h3 className="font-display font-semibold text-[#0F172A] text-lg">{pillar.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-600">{pillar.description}</p>
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* ── Platform Directory Grid ─────────────────────────────────── */}
           <section className="px-4 sm:px-6 py-14 bg-white">
             <div className="mx-auto max-w-7xl">
@@ -108,7 +185,7 @@ export default function TechnologyEcosystemPage() {
                 <SectionHeading eyebrow="The Ecosystem" heading="Technology Platforms We Work With" centered />
                 <p className="mt-4 text-slate-500 text-center max-w-2xl mx-auto text-sm leading-relaxed">
                   Each platform page covers what the technology does, the capabilities we explore,
-                  and how it connects to the services we deliver.
+                  the use cases it fits, and how it connects to the services we deliver.
                 </p>
               </AnimatedSection>
 
@@ -151,6 +228,46 @@ export default function TechnologyEcosystemPage() {
             </div>
           </section>
 
+          {/* ── At a Glance Table ───────────────────────────────────────── */}
+          <section className="px-4 sm:px-6 py-16 bg-white border-t border-cyan-100/60">
+            <div className="mx-auto max-w-6xl">
+              <AnimatedSection>
+                <SectionHeading eyebrow="At a glance" heading="Which Platform Fits Which Business" centered />
+                <p className="mt-4 text-slate-500 text-center max-w-2xl mx-auto text-sm leading-relaxed">
+                  A quick comparison of each platform&apos;s best fit and core focus. Use it to shortlist
+                  the technologies worth exploring further.
+                </p>
+              </AnimatedSection>
+
+              <AnimatedSection delay={0.1} className="mt-10">
+                <div className="overflow-x-auto rounded-2xl border border-cyan-100/80 shadow-[0_8px_24px_rgba(59,130,246,0.05)]">
+                  <table className="w-full border-collapse text-left text-sm">
+                    <thead>
+                      <tr className="bg-cyan-50/70 text-[#0F172A]">
+                        <th scope="col" className="px-5 py-4 font-display font-semibold">Platform</th>
+                        <th scope="col" className="px-5 py-4 font-display font-semibold">Best fit</th>
+                        <th scope="col" className="px-5 py-4 font-display font-semibold">Core focus</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {technologyPlatforms.map((platform, i) => (
+                        <tr key={platform.slug} className={i % 2 === 1 ? 'bg-slate-50/60' : 'bg-white'}>
+                          <th scope="row" className="px-5 py-4 align-top font-semibold text-[#0F172A]">
+                            <Link href={`/technology-ecosystem-integrators/${platform.slug}`} className="hover:text-cyan-700 transition-colors">
+                              {platform.name}
+                            </Link>
+                          </th>
+                          <td className="px-5 py-4 align-top text-slate-600">{platform.bestFor.replace(/^Best for /, '')}</td>
+                          <td className="px-5 py-4 align-top text-slate-600">{platform.badge}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </AnimatedSection>
+            </div>
+          </section>
+
           {/* ── How It Works ────────────────────────────────────────────── */}
           <section className="px-4 sm:px-6 py-16 bg-slate-50/60 border-y border-cyan-100/80">
             <div className="mx-auto max-w-6xl">
@@ -180,6 +297,25 @@ export default function TechnologyEcosystemPage() {
                       <span className="font-display text-3xl font-bold text-cyan-200">{s.step}</span>
                       <h3 className="mt-3 font-display font-semibold text-[#0F172A] text-lg">{s.title}</h3>
                       <p className="mt-2 text-sm leading-relaxed text-slate-600">{s.description}</p>
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── FAQs ────────────────────────────────────────────────────── */}
+          <section className="px-4 sm:px-6 py-16 bg-white">
+            <div className="mx-auto max-w-3xl">
+              <AnimatedSection>
+                <SectionHeading eyebrow="FAQ" heading="Technology Ecosystem — Common Questions" centered />
+              </AnimatedSection>
+              <div className="mt-10 space-y-4">
+                {hubFaqs.map((faq, i) => (
+                  <AnimatedSection key={faq.q} delay={i * 0.04}>
+                    <div className="rounded-2xl border border-cyan-100/80 bg-white/70 p-6 shadow-[0_8px_24px_rgba(59,130,246,0.05)]">
+                      <h3 className="font-display font-semibold text-[#0F172A] text-base leading-snug">{faq.q}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-500">{faq.a}</p>
                     </div>
                   </AnimatedSection>
                 ))}

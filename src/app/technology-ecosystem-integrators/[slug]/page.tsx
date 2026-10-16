@@ -166,6 +166,10 @@ export default function TechnologyPage({ params }: TechnologyPageProps) {
                 <p className="mt-4 text-sm text-cyan-700 font-medium">
                   Explore: {platform.explore}
                 </p>
+                <div className="mt-6 rounded-2xl border border-cyan-100 bg-[#ECFEFF]/60 p-5">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-cyan-700">Best fit</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{platform.bestFor}</p>
+                </div>
               </AnimatedSection>
             </div>
           </section>
@@ -201,8 +205,66 @@ export default function TechnologyPage({ params }: TechnologyPageProps) {
             </div>
           </section>
 
-          {/* ── Related Services ────────────────────────────────────────── */}
+          {/* ── Use Cases ───────────────────────────────────────────────── */}
           <section className="px-4 sm:px-6 py-16 bg-slate-50/60 border-y border-cyan-100/80">
+            <div className="mx-auto max-w-6xl">
+              <AnimatedSection>
+                <SectionHeading eyebrow="Use cases" heading={`Common ${platform.name} use cases`} centered />
+              </AnimatedSection>
+              <div className="mt-10 grid gap-5 md:grid-cols-3">
+                {platform.useCases.map((useCase, i) => (
+                  <AnimatedSection key={useCase.title} delay={i * 0.06}>
+                    <div className="h-full rounded-2xl border border-cyan-100/80 bg-white p-6 shadow-[0_8px_24px_rgba(59,130,246,0.05)]">
+                      <h3 className="font-display font-semibold text-[#0F172A] text-base leading-snug">{useCase.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-500">{useCase.description}</p>
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── Benefits ────────────────────────────────────────────────── */}
+          <section className="px-4 sm:px-6 py-16 bg-white">
+            <div className="mx-auto max-w-6xl">
+              <AnimatedSection>
+                <SectionHeading eyebrow="Benefits" heading={`Why ${platform.name} matters for your business`} centered />
+              </AnimatedSection>
+              <div className="mt-10 grid gap-5 md:grid-cols-3">
+                {platform.benefits.map((benefit, i) => (
+                  <AnimatedSection key={benefit.title} delay={i * 0.06}>
+                    <div className="h-full rounded-2xl border border-cyan-100/80 bg-white/70 p-6 shadow-[0_8px_24px_rgba(59,130,246,0.05)]">
+                      <h3 className="font-display font-semibold text-[#0F172A] text-base leading-snug">{benefit.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-500">{benefit.description}</p>
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── Our Approach ────────────────────────────────────────────── */}
+          <section className="px-4 sm:px-6 py-16 bg-slate-50/60 border-y border-cyan-100/80">
+            <div className="mx-auto max-w-6xl">
+              <AnimatedSection>
+                <SectionHeading eyebrow="Our approach" heading={`How we work with ${platform.name}`} centered />
+              </AnimatedSection>
+              <div className="mt-10 grid gap-5 md:grid-cols-3">
+                {platform.approach.map((step, i) => (
+                  <AnimatedSection key={step.title} delay={i * 0.08}>
+                    <div className="h-full rounded-2xl border border-cyan-100/80 bg-white p-6 shadow-[0_8px_24px_rgba(59,130,246,0.05)]">
+                      <span className="font-display text-3xl font-bold text-cyan-200">{String(i + 1).padStart(2, '0')}</span>
+                      <h3 className="mt-3 font-display font-semibold text-[#0F172A] text-lg">{step.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-600">{step.description}</p>
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── Related Services ────────────────────────────────────────── */}
+          <section className="px-4 sm:px-6 py-16 bg-white">
             <div className="mx-auto max-w-6xl">
               <AnimatedSection>
                 <SectionHeading eyebrow="Related services" heading="How we can help" centered />
@@ -233,7 +295,7 @@ export default function TechnologyPage({ params }: TechnologyPageProps) {
           </section>
 
           {/* ── FAQs ────────────────────────────────────────────────────── */}
-          <section className="px-4 sm:px-6 py-16 bg-white">
+          <section className="px-4 sm:px-6 py-16 bg-slate-50/60 border-y border-cyan-100/80">
             <div className="mx-auto max-w-3xl">
               <AnimatedSection>
                 <SectionHeading eyebrow="FAQ" heading={`${platform.name} — Common Questions`} centered />

@@ -35,7 +35,7 @@ const staticRoutes = [
   '/brand-audit',
   '/keywords',
   '/industries',
-  '/technology-ecosystem',
+  '/technology-ecosystem-integrators',
   '/social-media-platforms',
   '/ai-visibility-audit-report',
   '/careers',
@@ -66,7 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/brand-audit': 0.5,
     '/keywords': 0.6,
     '/industries': 0.7,
-    '/technology-ecosystem': 0.7,
+    '/technology-ecosystem-integrators': 0.7,
     '/social-media-platforms': 0.6,
     '/ai-visibility-audit-report': 0.7,
     '/careers': 0.5,
@@ -103,7 +103,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const ecosystemPages = technologyPlatforms.map((p) => ({
-    url: `${BASE}/technology-ecosystem/${p.slug}`,
+    url: `${BASE}/technology-ecosystem-integrators/${p.slug}`,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));

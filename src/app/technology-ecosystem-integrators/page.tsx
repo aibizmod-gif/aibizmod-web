@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   title: 'Technology Ecosystem — Microsoft, AWS, Salesforce & More | aibizmod',
   description:
     'Explore the technology platforms we work across — Microsoft, Temenos, SAP, Salesforce, IBM, AWS, Oracle, and Red Hat — and how each one fits your business operations.',
-  alternates: { canonical: 'https://aibizmod.com/technology-ecosystem' },
+  alternates: { canonical: 'https://aibizmod.com/technology-ecosystem-integrators' },
   openGraph: {
     title: 'Technology Ecosystem | aibizmod',
     description:
       'Explore the technology platforms behind business transformation — from Microsoft and AWS to Salesforce, SAP, Oracle, and Red Hat.',
-    url: 'https://aibizmod.com/technology-ecosystem',
+    url: 'https://aibizmod.com/technology-ecosystem-integrators',
     type: 'website',
   },
 };
@@ -41,12 +41,12 @@ export default function TechnologyEcosystemPage() {
     name: 'Technology Ecosystem',
     description:
       'Technology platforms we explore and integrate as part of business transformation.',
-    url: 'https://aibizmod.com/technology-ecosystem',
+    url: 'https://aibizmod.com/technology-ecosystem-integrators',
     itemListElement: technologyPlatforms.map((p, i) => ({
       '@type': 'ListItem',
       position: i + 1,
       name: p.name,
-      url: `https://aibizmod.com/technology-ecosystem/${p.slug}`,
+      url: `https://aibizmod.com/technology-ecosystem-integrators/${p.slug}`,
     })),
   };
 
@@ -116,7 +116,7 @@ export default function TechnologyEcosystemPage() {
                 {technologyPlatforms.map((platform, i) => (
                   <AnimatedSection key={platform.slug} delay={i * 0.05}>
                     <Link
-                      href={`/technology-ecosystem/${platform.slug}`}
+                      href={`/technology-ecosystem-integrators/${platform.slug}`}
                       className="group flex h-full flex-col rounded-2xl border border-cyan-100/80 bg-white p-6 shadow-[0_8px_24px_rgba(59,130,246,0.06)] transition hover:-translate-y-1 hover:border-cyan-200 hover:shadow-[0_18px_48px_rgba(8,145,178,0.12)]"
                     >
                       <div className="mb-4 flex h-8 items-center">

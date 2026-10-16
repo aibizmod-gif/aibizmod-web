@@ -34,7 +34,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: TechnologyPageProps): Metadata {
   const platform = getTechnologyPlatform(params.slug);
   if (!platform) return { title: 'Technology not found', robots: { index: false } };
-  const canonical = `https://aibizmod.com/technology-ecosystem/${platform.slug}`;
+  const canonical = `https://aibizmod.com/technology-ecosystem-integrators/${platform.slug}`;
   return {
     title: `${platform.name} — ${platform.badge} | aibizmod`,
     description: platform.description,
@@ -64,7 +64,7 @@ export default function TechnologyPage({ params }: TechnologyPageProps) {
   if (!platform) notFound();
 
   const Icon = icons[platform.slug] || Bot;
-  const canonical = `https://aibizmod.com/technology-ecosystem/${platform.slug}`;
+  const canonical = `https://aibizmod.com/technology-ecosystem-integrators/${platform.slug}`;
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -75,7 +75,7 @@ export default function TechnologyPage({ params }: TechnologyPageProps) {
         '@type': 'ListItem',
         position: 2,
         name: 'Technology Ecosystem',
-        item: 'https://aibizmod.com/technology-ecosystem',
+        item: 'https://aibizmod.com/technology-ecosystem-integrators',
       },
       { '@type': 'ListItem', position: 3, name: platform.name, item: canonical },
     ],
@@ -125,7 +125,7 @@ export default function TechnologyPage({ params }: TechnologyPageProps) {
               >
                 <Link href="/" className="transition-colors hover:text-[#0F172A]">Home</Link>
                 <ChevronRight size={13} className="shrink-0 text-cyan-300" aria-hidden="true" />
-                <Link href="/technology-ecosystem" className="transition-colors hover:text-[#0F172A]">Technology Ecosystem</Link>
+                <Link href="/technology-ecosystem-integrators" className="transition-colors hover:text-[#0F172A]">Technology Ecosystem</Link>
                 <ChevronRight size={13} className="shrink-0 text-cyan-300" aria-hidden="true" />
                 <span className="font-medium text-[#0F172A]" aria-current="page">{platform.name}</span>
               </nav>
@@ -251,7 +251,7 @@ export default function TechnologyPage({ params }: TechnologyPageProps) {
 
               <AnimatedSection delay={0.12} className="mt-12 text-center">
                 <Link
-                  href="/technology-ecosystem"
+                  href="/technology-ecosystem-integrators"
                   className="inline-flex items-center gap-2 rounded-full border border-cyan-100 bg-white px-6 py-3 text-sm font-semibold text-[#0F172A] shadow-[0_12px_32px_rgba(15,23,42,0.08)] transition hover:border-cyan-200 hover:bg-cyan-50"
                 >
                   <ArrowLeft size={16} />
